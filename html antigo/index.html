@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Madamy Lu • Saboaria Artesanal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500&display=swap');
+        
+        .logo-font { font-family: 'Playfair Display', serif; }
+        
+        .hero-bg {
+            background: linear-gradient(135deg, #fce7f3 0%, #f8a5c2 100%);
+        }
+        
+        .product-card {
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        
+        .product-card:hover {
+            transform: scale(1.06) rotate(1deg);
+            box-shadow: 0 25px 50px -12px rgb(248 165 194);
+        }
+        
+        .bubble { animation: floatBubble 8s ease-in-out infinite; }
+        @keyframes floatBubble {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-25px); }
+        }
+        
+        .testimonial-card {
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-8px);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="bg-white border-b-2 border-pink-200 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <img src="./images/logomadamy.jpg" 
+                     alt="Madamy Lu Logo" 
+                     class="w-14 h-14 object-contain rounded-2xl">
+                <div>
+                    <h1 class="logo-font text-4xl font-bold text-pink-500 tracking-tighter">Madamy Lu</h1>
+                    <p class="text-xs text-pink-400 -mt-1 font-medium tracking-[2px]">SABOARIA ARTESANAL</p>
+                </div>
+            </div>
+
+            <div class="hidden md:flex items-center gap-8 text-pink-700 font-medium">
+                <a href="#inicio" onclick="smoothScrollTo('inicio')" class="hover:text-pink-500">Início</a>
+                <a href="#sobre" onclick="smoothScrollTo('sobre')" class="hover:text-pink-500">Sobre a Lu</a>
+                <a href="#produtos" onclick="smoothScrollTo('produtos')" class="hover:text-pink-500">Produtos</a>
+                <a href="#depoimentos" onclick="smoothScrollTo('depoimentos')" class="hover:text-pink-500">Depoimentos</a>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <button onclick="toggleCart()" 
+                        class="flex items-center gap-2 bg-white border-2 border-pink-300 hover:border-pink-400 text-pink-600 px-6 py-3 rounded-3xl font-medium shadow-md">
+                    <i class="fa-solid fa-shopping-bag text-xl"></i>
+                    <span id="cart-count" class="bg-pink-500 text-white text-xs font-bold w-5 h-5 flex items-center justify-center rounded-full">0</span>
+                </button>
+                
+                <a href="https://wa.me/5517997558625?text=Oi%20Madamy%20Lu!%20Vim%20pelo%20seu%20site%20%F0%9F%92%95" 
+                   target="_blank"
+                   class="flex items-center gap-2 bg-[#25D366] hover:bg-[#20c65e] text-white px-6 py-3 rounded-3xl font-semibold shadow-md">
+                    <i class="fa-brands fa-whatsapp text-2xl"></i>
+                    <span class="hidden sm:inline">Falar com a Lu</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section id="inicio" class="hero-bg min-h-screen flex items-center relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center z-10">
+            <div class="space-y-8">
+                <div class="inline-flex items-center gap-2 bg-white/70 backdrop-blur px-5 py-2 rounded-full text-pink-600 text-sm">
+                    Feito com muito amor em São José do Rio Preto
+                </div>
+                
+                <h1 class="text-7xl md:text-8xl font-bold logo-font text-pink-600 leading-none tracking-tighter">Madamy Lu</h1>
+                <p class="text-4xl text-pink-700 font-light">Saboaria Artesanal</p>
+                <p class="text-xl text-pink-600 max-w-md">Sabonetes, geleias e mimos feitos à mão com ingredientes naturais e muito carinho.</p>
+                
+                <div class="flex gap-4 flex-wrap">
+                    <button onclick="smoothScrollTo('produtos')" 
+                            class="bg-pink-600 hover:bg-pink-700 text-white px-10 py-6 rounded-3xl text-xl font-medium shadow-lg">
+                        Ver Nossos Produtos
+                    </button>
+                    <a href="https://wa.me/5517997558625?text=Oi%20Lu!%20Quero%20conhecer%20seus%20produtos%20%F0%9F%92%96" 
+                       target="_blank"
+                       class="border-2 border-pink-600 text-pink-600 hover:bg-pink-100 px-10 py-6 rounded-3xl text-xl font-medium flex items-center gap-3 shadow-lg">
+                        <i class="fa-brands fa-whatsapp text-3xl"></i>
+                        Falar com a Lu
+                    </a>
+                </div>
+            </div>
+            
+            <div class="flex justify-center">
+                <img src="./images/logomadamy.jpg" 
+                     alt="Madamy Lu Logo" 
+                     class="w-80 md:w-96 drop-shadow-2xl">
+            </div>
+        </div>
+
+        <div class="absolute top-20 right-20 text-6xl bubble">🫧</div>
+        <div class="absolute bottom-32 left-32 text-5xl bubble" style="animation-delay: 2s;">🌸</div>
+    </section>
+
+    <!-- Sobre a Lu -->
+    <section id="sobre" class="py-24 bg-gradient-to-b from-pink-50 to-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-12 gap-12 items-center">
+                <div class="md:col-span-7 space-y-6">
+                    <div class="uppercase text-pink-400 text-sm font-medium tracking-widest">Conheça a criadora</div>
+                    <h2 class="text-5xl md:text-6xl font-bold text-pink-700 logo-font leading-none">Oi, eu sou a Lu! 🌸</h2>
+                    <div class="prose text-lg text-pink-700 leading-relaxed max-w-prose">
+                        <p>A Madamy Lu nasceu do meu grande amor por criar produtos que fazem as pessoas se sentirem especiais.</p>
+                        <p>Todos os sabonetes, geleias de banho e mimos são feitos por mim, à mão, com ingredientes naturais de qualidade. Meu maior prazer é imaginar você usando meus produtos e sentindo aquele carinho que só um produto artesanal pode oferecer.</p>
+                        <p>Cada peça é pensada com muito amor, desde a escolha dos aromas até o acabamento final. É como se eu estivesse enviando um abraço perfumado direto para o seu banho.</p>
+                    </div>
+                    <div class="flex items-center gap-8 pt-6">
+                        <div>
+                            <div class="text-4xl font-bold text-pink-500">100%</div>
+                            <div class="text-sm text-pink-400">Artesanal</div>
+                        </div>
+                        <div>
+                            <div class="text-4xl font-bold text-pink-500">Natural</div>
+                            <div class="text-sm text-pink-400">Ingredientes selecionados</div>
+                        </div>
+                        <div>
+                            <div class="text-4xl font-bold text-pink-500">Feito com</div>
+                            <div class="text-sm text-pink-400">Muito amor</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Foto da Lu (placeholder carinhoso) -->
+                <div class="md:col-span-5">
+                    <div class="bg-white p-8 rounded-3xl shadow-xl">
+                        <div class="aspect-square bg-gradient-to-br from-pink-100 to-pink-200 rounded-3xl flex items-center justify-center text-9xl border-8 border-pink-200">
+                            👩‍🍳🌷
+                        </div>
+                        <p class="text-center text-pink-600 font-medium mt-6">Lu, criadora da Madamy Lu</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Produtos -->
+    <section id="produtos" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-6xl logo-font text-pink-700">Nossos Produtos</h2>
+                <p class="text-pink-500 mt-3">Todos feitos à mão com muito carinho</p>
+            </div>
+
+            <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Depoimentos -->
+    <section id="depoimentos" class="py-24 bg-pink-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-5xl logo-font text-pink-700">O que as clientes dizem</h2>
+                <p class="text-pink-500 mt-3">Amor verdadeiro pelos produtos da Madamy Lu</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="testimonial-card bg-white p-8 rounded-3xl shadow">
+                    <div class="flex gap-1 text-yellow-400 mb-4">★★★★★</div>
+                    <p class="italic text-pink-700">"Os sabonetes são incríveis! Duram bastante e deixam a pele super macia. O de rosa é o meu favorito!"</p>
+                    <div class="mt-6 flex items-center gap-3">
+                        <div class="w-10 h-10 bg-pink-200 rounded-full"></div>
+                        <div>
+                            <div class="font-medium">Ana Clara</div>
+                            <div class="text-xs text-pink-400">São José do Rio Preto</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card bg-white p-8 rounded-3xl shadow">
+                    <div class="flex gap-1 text-yellow-400 mb-4">★★★★☆</div>
+                    <p class="italic text-pink-700">"A geleia de banho é maravilhosa! O cheiro fica na pele o dia todo. Já pedi o segundo pote!"</p>
+                    <div class="mt-6 flex items-center gap-3">
+                        <div class="w-10 h-10 bg-pink-200 rounded-full"></div>
+                        <div>
+                            <div class="font-medium">Mariana Silva</div>
+                            <div class="text-xs text-pink-400">Ribeirão Preto</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card bg-white p-8 rounded-3xl shadow">
+                    <div class="flex gap-1 text-yellow-400 mb-4">★★★★★</div>
+                    <p class="italic text-pink-700">"Comprei o kit de presente e a pessoa amou! O acabamento é perfeito e o cheiro é divino."</p>
+                    <div class="mt-6 flex items-center gap-3">
+                        <div class="w-10 h-10 bg-pink-200 rounded-full"></div>
+                        <div>
+                            <div class="font-medium">Juliana Mendes</div>
+                            <div class="text-xs text-pink-400">São Paulo</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card bg-white p-8 rounded-3xl shadow">
+                    <div class="flex gap-1 text-yellow-400 mb-4">★★★★★</div>
+                    <p class="italic text-pink-700">"O sabonete massageador é uma delícia! Sinto que estou no spa em casa. Recomendo demais!"</p>
+                    <div class="mt-6 flex items-center gap-3">
+                        <div class="w-10 h-10 bg-pink-200 rounded-full"></div>
+                        <div>
+                            <div class="font-medium">Beatriz Costa</div>
+                            <div class="text-xs text-pink-400">Campinas</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Carrinho Modal -->
+    <div id="cartModal" class="hidden fixed inset-0 bg-black/70 z-[100] flex items-center justify-center p-4">
+        <div class="bg-white w-full max-w-lg rounded-3xl overflow-hidden">
+            <div class="p-6 border-b flex justify-between items-center">
+                <h3 class="text-3xl font-semibold text-pink-600">Seu Carrinho 💖</h3>
+                <button onclick="toggleCart()" class="text-4xl text-pink-300 hover:text-pink-500">×</button>
+            </div>
+            <div id="cart-items" class="p-6 max-h-[420px] overflow-y-auto space-y-6"></div>
+            
+            <div class="p-6 border-t bg-pink-50">
+                <div class="flex justify-between text-2xl font-bold text-pink-700 mb-6">
+                    <span>Total</span>
+                    <span id="cart-total">R$ 0,00</span>
+                </div>
+                <button onclick="enviarPedidoWhatsApp()" 
+                        class="w-full bg-[#25D366] hover:bg-[#20c65e] text-white py-6 rounded-3xl text-xl font-semibold flex items-center justify-center gap-3">
+                    <i class="fa-brands fa-whatsapp text-3xl"></i>
+                    Enviar Pedido pelo WhatsApp
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-pink-700 text-white py-16">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <img src="./images/logomadamy.jpg" 
+                 alt="Madamy Lu" class="mx-auto w-20 opacity-90 mb-4">
+            <p class="text-pink-200">Saboaria Artesanal • São José do Rio Preto - SP</p>
+            <p class="mt-8 text-sm text-pink-300">© 2026 Madamy Lu • Feito com muito amor</p>
+        </div>
+    </footer>
+
+    <script>
+        const products = [
+            { id: 1, name: "Sabonete Massageador", description: "120 a 130g • Textura especial para massagem", price: 16.00, image: "./images/sabonetemassageadora.jpg" },
+            { id: 2, name: "Geleia de Banho", description: "Hidratação intensa e aroma delicioso", price: 21.00, image: "./images/geleia de banho.jpg" },
+            { id: 3, name: "Sabonete em Formato de Rosa", description: "70g • Aroma romântico de rosas", price: 12.50, image: "./images/sabonete rosa.jpg" },
+            { id: 4, name: "Sabonete Artesanal", description: "80g • Clássico e perfumado", price: 13.50, image: "./images/saboneteartesanal.jpg" },
+            { id: 5, name: "Kit Hidratante + Sabonete", description: "Combinação perfeita de cuidados", price: 59.90, image: "./images/kithidratante.jpg" },
+            { id: 6, name: "Sabonete Massageador de Margarida", description: "120-130g • Delicado e relaxante", price: 16.00, image: "./images/sabonete" },
+            { id: 7, name: "Sabonete de Tulipa e Margarida", description: "70g • Floral suave e delicado", price: 10.50, image: "./images/sabonetetulipa.jpg" },
+            { id: 8, name: "Sabonete em Cachos", description: "Formato especial em cachos", price: 13.50, image: "./images/cachos.jpg" },
+            { id: 9, name: "Creme Hidratante", description: "110g • Hidratação profunda", price: 18.00, image: "./images/creme hidratante.jpg" }
+        ]
+
+        let cart = []
+
+        function renderProducts() {
+            const container = document.getElementById('products-grid')
+            container.innerHTML = ''
+            products.forEach(product => {
+                const html = `
+                <div class="product-card bg-white rounded-3xl overflow-hidden shadow-lg border border-pink-100">
+                    <img src="${product.image}" alt="${product.name}" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-semibold text-xl text-pink-700">${product.name}</h3>
+                        <p class="text-pink-500 text-sm mt-1">${product.description}</p>
+                        <p class="text-2xl font-bold text-pink-600 mt-3">R$ ${product.price.toFixed(2).replace('.', ',')}</p>
+                        <button onclick="addToCart(${product.id})" class="mt-6 w-full bg-pink-500 hover:bg-pink-600 text-white py-4 rounded-2xl font-medium">Adicionar ao Carrinho</button>
+                    </div>
+                </div>`
+                container.innerHTML += html
+            })
+        }
+
+        function addToCart(id) {
+            const product = products.find(p => p.id === id)
+            const existing = cart.find(item => item.id === id)
+            if (existing) existing.quantity = (existing.quantity || 1) + 1
+            else cart.push({...product, quantity: 1})
+            updateCartCount()
+            
+            const toast = document.createElement('div')
+            toast.style.cssText = 'position:fixed; bottom:20px; left:20px; background:#25D366; color:white; padding:14px 22px; border-radius:9999px; box-shadow:0 10px 15px -3px rgb(0 0 0 / 0.3); z-index:9999;'
+            toast.innerHTML = `✅ ${product.name} adicionado!`
+            document.body.appendChild(toast)
+            setTimeout(() => toast.remove(), 2500)
+        }
+
+        function updateCartCount() {
+            let count = cart.reduce((acc, item) => acc + (item.quantity || 1), 0)
+            document.getElementById('cart-count').textContent = count
+        }
+
+        function toggleCart() {
+            const modal = document.getElementById('cartModal')
+            modal.classList.toggle('hidden')
+            if (!modal.classList.contains('hidden')) renderCart()
+        }
+
+        function renderCart() {
+            const container = document.getElementById('cart-items')
+            container.innerHTML = ''
+            let total = 0
+
+            if (cart.length === 0) {
+                container.innerHTML = `<p class="text-center py-16 text-pink-400">Seu carrinho está vazio...</p>`
+                document.getElementById('cart-total').textContent = 'R$ 0,00'
+                return
+            }
+
+            cart.forEach((item, index) => {
+                const qtd = item.quantity || 1
+                const subtotal = item.price * qtd
+                total += subtotal
+                container.innerHTML += `
+                <div class="flex gap-4 bg-pink-50 rounded-2xl p-4">
+                    <img src="${item.image}" class="w-20 h-20 object-cover rounded-xl">
+                    <div class="flex-1">
+                        <div class="font-medium text-pink-700">${item.name}</div>
+                        <div class="text-sm text-pink-500">${qtd} × R$ ${item.price.toFixed(2).replace('.', ',')}</div>
+                        <button onclick="removeFromCart(${index})" class="text-red-400 text-xs mt-2 hover:underline">Remover</button>
+                    </div>
+                    <div class="font-bold text-pink-700 text-right">R$ ${subtotal.toFixed(2).replace('.', ',')}</div>
+                </div>`
+            })
+            document.getElementById('cart-total').textContent = `R$ ${total.toFixed(2).replace('.', ',')}`
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1)
+            renderCart()
+            updateCartCount()
+        }
+
+        function enviarPedidoWhatsApp() {
+            if (cart.length === 0) return
+            let msg = "Olá Madamy Lu! 💕\n\nQuero fazer o seguinte pedido:\n\n"
+            let total = 0
+            cart.forEach(item => {
+                const qtd = item.quantity || 1
+                const sub = item.price * qtd
+                total += sub
+                msg += `• ${qtd}x ${item.name} → R$ ${sub.toFixed(2).replace('.', ',')}\n`
+            })
+            msg += `\nTotal dos produtos: R$ ${total.toFixed(2).replace('.', ',')}\n`
+            msg += "Pode me informar o valor do frete para o meu CEP e confirmar o pedido? Aguardo seu retorno! 🌸"
+            
+            window.open(`https://wa.me/5517997558625?text=${encodeURIComponent(msg)}`, '_blank')
+            
+            setTimeout(() => {
+                cart = []
+                updateCartCount()
+                toggleCart()
+            }, 1500)
+        }
+
+        function smoothScrollTo(id) {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' })
+        }
+
+        window.onload = () => renderProducts()
+    </script>
+</body>
+</html>
