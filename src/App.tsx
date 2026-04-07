@@ -13,15 +13,15 @@ type Product = {
 type CartItem = Product & { quantity: number };
 
 const products: Product[] = [
-  { id: 1, name: "Sabonete Massageador", description: "120 a 130g • Textura especial para massagem", price: 16.00, image: "./public/images/sabonetemassageadora.jpg" },
-  { id: 2, name: "Geleia de Banho", description: "Hidratação intensa e aroma delicioso", price: 21.00, image: "./public/images/geleia de banho.jpg" },
-  { id: 3, name: "Sabonete em Formato de Rosa", description: "70g • Aroma romântico de rosas", price: 12.50, image: "./public/images/sabonete rosa.jpg" },
-  { id: 4, name: "Sabonete Artesanal", description: "80g • Clássico e perfumado", price: 13.50, image: "./public/images/saboneteartesanal.jpg" },
-  { id: 5, name: "Kit Hidratante + Sabonete", description: "Combinação perfeita de cuidados", price: 59.90, image: "./public/images/kithidratante.jpg" },
-  { id: 6, name: "Sabonete Massageador de Margarida", description: "120-130g • Delicado e relaxante", price: 16.00, image: "./public/images/sabonetemassageadora.jpg" },
-  { id: 7, name: "Sabonete de Tulipa e Margarida", description: "70g • Floral suave e delicado", price: 10.50, image: "./public/images/sabonetetulipa.jpg" },
-  { id: 8, name: "Sabonete em Cachos", description: "Formato especial em cachos", price: 13.50, image: "./public/images/cachos.jpg" },
-  { id: 9, name: "Creme Hidratante", description: "110g • Hidratação profunda", price: 18.00, image: "./public/images/creme hidratante.jpg" }
+  { id: 1, name: "Sabonete Massageador", description: "120 a 130g • Textura especial para massagem", price: 16.00, image: "/images/sabonetemassageadora.jpg" },
+  { id: 2, name: "Geleia de Banho", description: "Hidratação intensa e aroma delicioso", price: 21.00, image: "/images/geleia de banho.jpg" },
+  { id: 3, name: "Sabonete em Formato de Rosa", description: "70g • Aroma romântico de rosas", price: 12.50, image: "/images/sabonete rosa.jpg" },
+  { id: 4, name: "Sabonete Artesanal", description: "80g • Clássico e perfumado", price: 13.50, image: "/images/saboneteartesanal.jpg" },
+  { id: 5, name: "Kit Hidratante + Sabonete", description: "Combinação perfeita de cuidados", price: 59.90, image: "/images/kithidratante.jpg" },
+  { id: 6, name: "Sabonete Massageador de Margarida", description: "120-130g • Delicado e relaxante", price: 16.00, image: "/images/sabonetemassageadora.jpg" },
+  { id: 7, name: "Sabonete de Tulipa e Margarida", description: "70g • Floral suave e delicado", price: 10.50, image: "/images/sabonetetulipa.jpg" },
+  { id: 8, name: "Sabonete em Cachos", description: "Formato especial em cachos", price: 13.50, image: "/images/cachos.jpg" },
+  { id: 9, name: "Creme Hidratante", description: "110g • Hidratação profunda", price: 18.00, image: "/images/creme hidratante.jpg" }
 ];
 
 const testimonials = [
@@ -103,7 +103,7 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
           <div className="flex items-center gap-3 cursor-pointer" onClick={() => scrollTo('inicio')}>
             <div className="w-12 h-12 bg-rose-200 rounded-2xl flex items-center justify-center text-rose-600 font-serif font-bold text-2xl shadow-inner">
-            <img src="./public/images/logomadamy.jpg" alt="Logo" className="w-full h-full rounded-2xl object-cover" />
+            <img src="/images/logomadamy.jpg" alt="Logo" className="w-full h-full rounded-2xl object-cover" />
             </div>
             <div>
               <h1 className="font-serif text-2xl font-bold text-rose-800 tracking-tight leading-none">Madamy Lu</h1>
@@ -193,7 +193,7 @@ export default function App() {
           >
             <div className="aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl shadow-rose-200/50 relative">
               <img 
-                src="./public/images/sabonetemassageadora.jpg" 
+                src="/images/sabonetemassageadora.jpg" 
                 alt="Sabonetes Artesanais" 
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
@@ -233,7 +233,7 @@ export default function App() {
             >
               <div className="aspect-square rounded-full overflow-hidden border-8 border-rose-50 shadow-2xl relative z-10">
                 <img 
-                  src="./public/images/lu.jpg" 
+                  src="/images/lu.jpg" 
                   alt="Processo Artesanal" 
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"
